@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transcript</title>
+        <style>
+            #second, #second th, #second td {
+    border:1px solid black;
+    border-collapse: collapse;
+}
+
+
+table {
+    width: 100%;
+}
+
+.CT {
+    width: 50%
+}
+
+.section {
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: 700;
+}
+
+.gpa {
+    text-align: center;
+    
+}
+
+.CreditEarned {
+    height: 70px;
+    text-align: center;
+}
+
+.courseID {
+    width: 15%;
+    background-color: #f8f8f8;
+}
+
+.courseID::-webkit-outer-spin-button, .courseID::-webkit-inner-spin-button, 
+#studentID::-webkit-outer-spin-button, #studentID::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.courseName {
+    width: 75%;
+    background-color: #f8f8f8;
+}
+
+.credit, .grade {
+    background-color: #f8f8f8;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+#submit {
+    margin: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#subbtn {
+    text-align: right;
+}
+
+#first input {
+    background-color: #f9f9f9;
+}
+
+#first label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    border: 1px solid black;
+    padding: 5px 30px;
+    
+}
+
+#Photo {
+    border: 1px solid black;
+    padding: 40px 30px;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    margin: 60px; 
+}
+        </style>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <!-- <script src="HW.js"></script> -->
+    </head>
+    <body>
+        <header>
+            <h1 id="header">(Unofficial Transcript)</h1>
+            <h3>School of Engineering</h3>
+
+        </header>
+        <main>
+            <form>
+                <div id="StudentInfo">
+                    <div id="Photo">
+                        <label>Photo</label>
+                    </div>
+                    
+                    <table id="first">
+                        <tr>
+                            <td>
+                                <label for="name">Name</label>
+                                <input type="text" id="name"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="birthDate">Date of Birth</label>
+                                <input type="date" id="birthDate"/>
+                            </td>
+                            <td>
+                                <label for="studentID">Student ID</label>
+                                <input type="number" id="studentID"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="admissionDate">Date of admission</label>
+                                <input type="text" id="admissionDate"/>
+                            </td>
+                            <td>
+                                <label for="GradDate">Date of Graduation</label>
+                                <input type="text" id="GradDate"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="degree">Degree</label>
+                                <input type="text" id="degree"/>
+                            </td>
+                            <td rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="major">Major</label>
+                                <input type="text" id="major"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="CourseInfo">
+                    <table id="second">
+                        <thead>
+                            <th class="CT">COURSE TITLE</th>
+                            <th class="CR">CREDIT</th>
+                            <th class="GR">GRADE</th>
+                            <th class="CT">COURSE TITLE</th>
+                            <th class="CR">CREDIT</th>
+                            <th class="GR">GRADE</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="section">
+                                    Transfer Credit
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td rowspan="35"></td>
+                                <td rowspan="35"></td>
+                                <td rowspan="35"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" class="courseID" placeholder="course ID" id="TC_ID_1"/>
+                                    <input type="text" class="courseName" placeholder="Course Name" id="TC_Name_1"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="TC_CR_1">
+                                </td>
+                                <td>
+                                    <select class="grade" id="TC_GR_1">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" class="courseID" id="TC_ID_2"/>
+                                    <input type="text" class="courseName" id="TC_Name_2"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="TC_CR_2">
+                                </td>
+                                <td>
+                                    <select class="grade" id="TC_GR_2">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="gpa">
+                                    <label for="GPA1">GPA: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPA1"/>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="section">
+                                    1st semester, Year, 2021-2022
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_1st_ID_1"/>
+                                    <input type="text" class="courseName" id="21-22_1st_Name_1"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_1st_CR_1">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_1st_GR_1">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_1st_ID_2"/>
+                                    <input type="text" class="courseName" id="21-22_1st_Name_2"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_1st_CR_2">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_1st_GR_2">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_1st_ID_3"/>
+                                    <input type="text" class="courseName" id="21-22_1st_Name_3"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_1st_CR_3">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_1st_GR_3">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_1st_ID_4"/>
+                                    <input type="text" class="courseName" id="21-22_1st_Name_4"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_1st_CR_4">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_1st_GR_4">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_1st_ID_5"/>
+                                    <input type="text" class="courseName" id="21-22_1st_Name_5"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_1st_CR_5">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_1st_GR_5">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_1st_ID_6"/>
+                                    <input type="text" class="courseName" id="21-22_1st_Name_6"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_1st_Name_6">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_1st_GR_6">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="gpa">
+                                    <label for="GPS1">GPS: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPS1"/>
+                                    <label for="GPA2">GPA: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPA2"/>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="section">
+                                    2nd semester, Year, 2021-2022
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_2nd_ID_1"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_1"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_1">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_1">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_2nd_ID_2"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_2"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_2">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_2">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_2nd_ID_3"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_3"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_3">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_3">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" class="courseID" id="21-22_2nd_ID_4"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_4"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_4">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_4">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_2nd_ID_5"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_5"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_5">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_5">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_2nd_ID_6"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_6"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_6">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_6">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="21-22_2nd_ID_7"/>
+                                    <input type="text" class="courseName" id="21-22_2nd_Name_7"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="21-22_2nd_CR_7">
+                                </td>
+                                <td>
+                                    <select class="grade" id="21-22_2nd_GR_7">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="gpa">
+                                    <label for="GPS2">GPS: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPS2"/>
+                                    <label for="GPA3">GPA: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPA3"/>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="section">
+                                    1st semester, Year, 2022-2023
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_1"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_1"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_1">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_1">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_2"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_2"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_2">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_2">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_3"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_3"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_3">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_3">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_4"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_4"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_4">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_4">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_5"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_5"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_5">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_5">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_6"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_6"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_6">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_6">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_7"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_7"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_7">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_7">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" class="courseID" id="22-23_1st_ID_8"/>
+                                    <input type="text" class="courseName" id="22-23_1st_Name_8"/>
+                                </td>
+                                <td>
+                                    <input type="number" min="1" max="4" class="credit" id="22-23_1st_CR_8">
+                                </td>
+                                <td>
+                                    <select class="grade" id="22-23_1st_GR_8">
+                                        <option>X</option>
+                                        <option>F</option>
+                                        <option>D</option>
+                                        <option>D+</option>
+                                        <option>C</option>
+                                        <option>C+</option>
+                                        <option>B</option>
+                                        <option>B+</option>
+                                        <option>A</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="gpa">
+                                    <label for="GPS3">GPS: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPS3"/>
+                                    <label for="GPA4">GPA: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="GPA4"/>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" colspan="3" class="CreditEarned">
+                                    <label for="tolCredit">Total number of credits earned: </label>
+                                    <input type="number" step="0.01" min="0" max="4" id="tolCredit"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="subbtn">
+                    <button type="submit" id="submit" onclick="displayResume()">Submit</button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
